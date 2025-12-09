@@ -1,0 +1,17 @@
+name: Welcome CI/CD
+
+on:
+  push:
+    branches: [ main ]   # runs when you push to main
+  workflow_dispatch:      # allows manual run
+
+jobs:
+  welcome-job:
+    runs-on: ubuntu-latest   # GitHub inbuilt Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print welcome message
+        run: echo "Welcome to CI/CD 🎉"
